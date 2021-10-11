@@ -16,6 +16,11 @@ The Hat combines :
 
 Consult [Schematics.pdf](doc/Schematics.pdf)
 
+Third party components libraries needed :
+* [LM2596 DC to DC buck/step-down module](https://github.com/yet-another-average-joe/KiCad-Chinese_Modules/tree/main/DCDC_StepDown_LM2596)
+* https://github.com/g200kg/kicad-lib-arduino.git
+
+
 Software to download to the Arduino is [here](https://github.com/btrinite/robocars_hat)
 
 Based on https://github.com/devbisme/RPi_Hat_Template
