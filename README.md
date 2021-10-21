@@ -21,6 +21,7 @@ Third party components libraries needed :
 * https://github.com/g200kg/kicad-lib-arduino.git
 
 
-Software to download to the Arduino is [here](https://github.com/btrinite/robocars_hat)
+Software to upload to the Arduino is [here](https://github.com/btrinite/robocars_hat)
+Modified Donkeycar software with integration of the DIYRobocarsFr Hat is available [here](https://github.com/btrinite/donkey_with_robocars_hat)
 
 Based on https://github.com/devbisme/RPi_Hat_Template
