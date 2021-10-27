@@ -1,5 +1,6 @@
-This repository contains the hardware part of the DIYRobocarsFr Hat.
+# This repository contains the hardware part of the DIYRobocarsFr Hat.
 
+## Intro
 This Hat is designed for Raspberry Pi 3/4, Jetson Nano or any other SBC implementing the well known 'rpi' GPIO connector.
 This Hat provides various interfaces between SBC (Single Board Controler) and hardware to easely build an autonomous small scale RC-style car.
 A typical example of such build is the [Donkey car](https://www.donkeycar.com/)
@@ -29,15 +30,39 @@ The follwing jumpers are provided for convenience :
 - 5V to GPIO : to inject or not 5V from embedded DC/DC converter to 40 pin header GPIO (used typically to power raspberry from the Hat)
 - UART0 RX/TX Jumper : to isolate Arduino UART from Rasperry UART, usefull to re-flash in-situ the Arduino
 
+## Wiring
+A typical wiring of the Hat is shown below : 
+
+![Hat Wiring](doc/Wiring.png)
+
+About jumpers :
+- 5V to GPIO : this jumper allow to inject 5V to the GPIO connector (can be used to power Raspberry or Jetson Nano from the Battery through the DC/DC converter integrated in the DIYRobocars Hat). For other Hosts, please check documentation
+- RX/TX Uart jumper : those jumpers allow to connect UART of the embedded Arduino to the GPIO connector pin 8 and 10. Usually, you need this jumpers since all communication between Host and Hat goes through this UART. Removing those jumpers could be needed to reflash Arduino while the Host is powered (Hot reflash)
+
+## Schematic
+
 Consult [Schematics.pdf](doc/Schematics.pdf)
+
+## Dependencies
 
 Third party components libraries needed :
 * [LM2596 DC to DC buck/step-down module](https://github.com/yet-another-average-joe/KiCad-Chinese_Modules/tree/main/DCDC_StepDown_LM2596)
 * https://github.com/g200kg/kicad-lib-arduino.git
 
+## Firmware
 
-Software to upload to the Arduino is [here](https://github.com/btrinite/robocars_hat)
+### Source
+Firmware to upload to the Arduino ca be found [here](https://github.com/btrinite/robocars_hat)
+
+### Flash firmware
+To flash firmware, you need to connect a 5V FTDI adaptor featuring DTR signal and use Arduino IDE to flash/upload the content.
+Do not forget to solder Pin header connector on Arduino Pins dedicated for uploading/flash purpose.
+You can find more informations [here](https://www.arduino.cc/en/Guide/ArduinoProMini)
+
+
+## Example of ingtegration
 Modified Donkeycar software with integration of the DIYRobocarsFr Hat is available [here](https://github.com/btrinite/donkey_with_robocars_hat)
 
+## Credits
 Based on https://github.com/devbisme/RPi_Hat_Template
 
