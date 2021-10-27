@@ -27,17 +27,14 @@ The Hat has the following I/O :
 - WS2812B compatible output to control more RGB Led
 
 The follwing jumpers are provided for convenience :
-- 5V to GPIO : to inject or not 5V from embedded DC/DC converter to 40 pin header GPIO (used typically to power raspberry from the Hat)
-- UART0 RX/TX Jumper : to isolate Arduino UART from Rasperry UART, usefull to re-flash in-situ the Arduino
+- 5V to GPIO : to inject 5V power supply to the Host through GPIO connector (to power Raspberry or Jetson Nano from the main Battery).
+For other Hosts, please check documentation
+- UART0 RX/TX Jumper : Usually, you need those jumpers since all communication between Host and Hat goes through this UART. Removing those jumpers could be needed to isolate Arduino UART while re-flashing it (especially if Host is powered on at flahsing time).
 
 ## Wiring
 A typical wiring of the Hat is shown below : 
 
 ![Hat Wiring](doc/Wiring.png)
-
-About jumpers :
-- 5V to GPIO : this jumper allow to inject 5V to the GPIO connector (can be used to power Raspberry or Jetson Nano from the Battery through the DC/DC converter integrated in the DIYRobocars Hat). For other Hosts, please check documentation
-- RX/TX Uart jumper : those jumpers allow to connect UART of the embedded Arduino to the GPIO connector pin 8 and 10. Usually, you need this jumpers since all communication between Host and Hat goes through this UART. Removing those jumpers could be needed to reflash Arduino while the Host is powered (Hot reflash)
 
 ## Schematic
 
