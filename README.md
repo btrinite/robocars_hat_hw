@@ -40,6 +40,20 @@ A typical wiring of the Hat is shown below :
 
 Consult [Schematics.pdf](doc/Schematics.pdf)
 
+## Note on PWM Block
+
+### Power supply
+Hat does not provide power supply through PWM Inputs/Outpus. It is usualy duty of the motor controller (ESC) which feature a BEC.
+This is to avoid mixing logic and actuators on the same power source. It means that as long as ESC is not connected and switchded on, Servo and RX Receiver will not be powered.
+
+### output Idle signal
+In the current implementation,
+- First, as soon as the Hat is powered, a default Idle signal is driven (1,5ms pulse width)
+This default idle signal could differ from the one you could have when doing calibration. 
+- Second, many ESC will autocalibrate to this idle signal at startup time (when switched on) 
+
+If you are in that case, it is recommanded to switch on the ESC only after the main application is up and running.
+
 ## Dependencies
 
 Third party components libraries needed :
