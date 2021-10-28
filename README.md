@@ -48,8 +48,10 @@ This is to avoid mixing logic and actuators on the same power source. It means t
 
 ### output Idle signal
 In the current implementation,
+
 - First, as soon as the Hat is powered, a default Idle signal is driven (1,5ms pulse width)
 This default idle signal could differ from the one you could have when doing calibration. 
+
 - Second, many ESC will autocalibrate to this idle signal at startup time (when switched on) 
 
 If you are in that case, it is recommanded to switch on the ESC only after the main application is up and running.
@@ -57,7 +59,9 @@ If you are in that case, it is recommanded to switch on the ESC only after the m
 ## Dependencies
 
 Third party components libraries needed :
+
 * [LM2596 DC to DC buck/step-down module](https://github.com/yet-another-average-joe/KiCad-Chinese_Modules/tree/main/DCDC_StepDown_LM2596)
+
 * https://github.com/g200kg/kicad-lib-arduino.git
 
 ## Firmware
