@@ -74,8 +74,22 @@ To flash firmware, you need to connect a 5V FTDI adaptor featuring DTR signal an
 Do not forget to solder Pin header connector on Arduino Pins dedicated for uploading/flash purpose.
 You can find more informations [here](https://www.arduino.cc/en/Guide/ArduinoProMini)
 
+## Troubleshooting
 
-## Example of ingtegration
+### Loopback test (only applicable when using SimpleSerial protocol version of the firmware)
+SimpleSerial protocol messages that carry throttle and steering are almost symetrical. Thus, if you loopback the serial comunication (RX wired to TX), the Hat will
+work in loopback mode. Throttle/Steering orders received from RX Receiver will be used to drive Throttle/Steering output.
+
+Loopback mode is achieved by :
+- removing Rx/Tx jumpers to decouple UART signal from Host
+- Wiring Rx and Tx together
+
+This is illsutrated below : 
+
+![DIY Robocars FR Hat](doc/Loopback.png)
+
+
+## Example of integration
 Modified Donkeycar software with integration of the DIYRobocarsFr Hat is available [here](https://github.com/btrinite/donkey_with_robocars_hat)
 
 ## Credits
